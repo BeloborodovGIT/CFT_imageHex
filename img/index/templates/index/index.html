@@ -5,7 +5,8 @@
     <title>{{title}} title</title>
 </head>
 <body>
-{% if white or black %}
+<div align="center">
+    {% if white or black %}
 
     <P>{{ image }}</P>
 
@@ -13,20 +14,21 @@
     <p>Количество черных пикселей : {{black}}</p>
 
     {% if black > white %}
-        <p>Черных больше</p>
+    <p>Черных больше</p>
     {% elif black > white %}
-        <p>Черных и белых одинаковое количество</p>
+    <p>Черных и белых одинаковое количество</p>
     {% else %}
-        <p>Белых больше</p>
+    <p>Белых больше</p>
     {% endif %}
 
-{% endif %}
-<form action="{% url 'index' %}" enctype="multipart/form-data" method="post">
-    {% csrf_token %}
+    {% endif %}
+    <form action="{% url 'index' %}" enctype="multipart/form-data" method="post">
+        {% csrf_token %}
 
-    {{ form.as_p }}
-    <button type="submit">Анализ</button>
-</form>
+        {{ form.as_p }}
+        <button type="submit">Анализ</button>
+    </form>
+</div>
 
 </body>
 </html>

@@ -21,7 +21,7 @@ def color_count(f):
 
 def index(request):
     context = {}
-    
+
     if request.method == 'POST':
         form = ImageForm(request.POST, request.FILES)
         if form.is_valid():
